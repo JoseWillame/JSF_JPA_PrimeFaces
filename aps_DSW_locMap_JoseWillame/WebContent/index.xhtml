@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+	<h:head><title>Página de Cadastro</title></h:head>
+	<h:body>
+		<p:panel header="Página de Cadastro">
+			<h:form id="formulario">
+				
+				<p:messages id="messages" showDetail="true" closable="true">
+					<p:autoUpdate/>
+				</p:messages>
+				<p:panelGrid columns="2">
+					<p:outputLabel value="Estado:"></p:outputLabel>
+					<p:inputText  value="#{localBea.local.estado}" required="true" requiredMessage="Preencha todos os campos."/>
+					
+					<p:outputLabel value="Cidade:"></p:outputLabel>
+					<p:inputText  value="#{localBea.local.cidade}" required="true" requiredMessage="Preencha todos os campos."/>
+					
+					<p:outputLabel value="Bairro:"></p:outputLabel>
+					<p:inputText  value="#{localBea.local.bairro}" required="true" requiredMessage="Preencha todos os campos."/>
+					
+					<p:outputLabel value="Rua:"></p:outputLabel>
+					<p:inputText  value="#{localBea.local.rua}" required="true" requiredMessage="Preencha todos os campos."/>
+					
+					<p:outputLabel value="Numero:"></p:outputLabel>
+					<p:inputText  value="#{localBea.local.numero}"></p:inputText>
+					
+					<p:outputLabel value="Visita:"></p:outputLabel>
+					<p:calendar  value="#{localBea.local.visita}" showOn="button" pattern="dd/MM/yyyy HH:mm:ss"/>
+					
+					<p:commandButton action="#{localBea.salvar}" value="Salvar" update="formulario"></p:commandButton>
+					<p:link outcome="listagem.xhtml" value="Listar"></p:link>
+				</p:panelGrid>
+			</h:form>		
+		</p:panel>
+	</h:body>
+</html>
